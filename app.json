@@ -3,7 +3,7 @@
     "pages/index/index"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#cbeefd",
     "navigationBarTitleText": "松鼠天气",
     "navigationBarTextStyle": "black",
