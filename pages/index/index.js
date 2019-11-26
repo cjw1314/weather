@@ -20,7 +20,8 @@ Page({
     nowTemp: '14℃',
     nowWeather: '阴天',
     nowWeatherBackground: '',
-    forcast:[1,2,32,5,4564,65,456,46,654,564,56,46,456]
+    hourlyWeather:[],
+    
   },
 
 
@@ -61,6 +62,25 @@ Page({
           frontColor: '#000000',
           backgroundColor: weatherColorMap[weather],
         })
+        //set forcast
+        let nowHour =new Date().getHours();
+        let forecast =result.forecast;
+
+        let hourlyWeather=[];
+        for (let i = 0; i<24;i+=3)
+         {
+           hourlyWeather.push({
+
+            time:(i+nowHour)%24+'时',
+            iconPath:'../../bgp/'+forecast[i/3].weather+'-icon.png',
+            
+            temp:forecast[i/3].temp +'℃'
+           })
+            hourlyWeather[0].time='现在'
+           } this.setData({
+             hourlyWeather:hourlyWeather
+           })
+
       },
       complete: () => {
         callback && callback()
