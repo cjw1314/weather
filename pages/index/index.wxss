@@ -78,3 +78,8 @@
   line-height: 56rpx;
 
 }
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
